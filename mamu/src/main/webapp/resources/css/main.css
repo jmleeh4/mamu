@@ -1,0 +1,110 @@
+/* ============================================================================================
+	Font
+============================================================================================ */
+@font-face {
+  font-family: noto;
+  font-style: normal;
+  font-weight: 200;
+  src: url('../font/NotoSansKR-Light-Hestia.eot');
+  src: url('../font/NotoSansKR-Light-Hestia.eot?#iefix') format('embedded-opentype'),
+  url('../font/NotoSansKR-Light-Hestia.woff') format('woff'),
+  url('../font/NotoSansCJKkr-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: noto;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../font/NotoSansKR-Regular-Hestia.eot');
+  src: url('../font/NotoSansKR-Regular-Hestia.eot?#iefix') format('embedded-opentype'),
+  url('../font/NotoSansKR-Regular-Hestia.woff') format('woff'),
+  url('../font/NotoSansCJKkr-Regular.ttf') format('truetype');
+}
+/* semi-Bold */
+@font-face {
+  font-family: noto;
+  font-style: normal;
+  font-weight: 600;
+  src: url('../font/NotoSansKR-Medium-Hestia.eot');
+  src: url('../font/NotoSansKR-Medium-Hestia.eot?#iefix') format('embedded-opentype'),
+  url('../font/NotoSansKR-Medium-Hestia.woff') format('woff'),
+  url('../font/NotoSansCJKkr-Medium.ttf') format('truetype');
+}
+/* Bold */
+@font-face {
+  font-family: noto;
+  font-style: normal;
+  font-weight: 900;
+  src: url('../font/NotoSansKR-Bold-Hestia.eot');
+  src: url('../font/NotoSansKR-Bold-Hestia.eot?#iefix') format('embedded-opentype'),
+  url('../font/NotoSansKR-Bold-Hestia.woff') format('woff'),
+  url('../font/NotoSansCJKkr-Bold.ttf') format('truetype');
+}
+
+body {
+  margin: 0 0 0 0;
+}
+.wrapper {
+  margin: 0 0 0 0;
+}
+
+.header {
+  width: 100%;
+  height:80px;
+  margin: 0 auto;
+  border-bottom: solid 1px lightslategray;
+}
+.header .header-hambuger {
+  background: url(../img/menu.png) no-repeat center/contain;
+  display: inline-block;
+  /*width:135px;*/
+  height: 40px;
+  width: 5%;
+  margin: 15px 30px;
+}
+
+.header .header-conts {
+  display: inline-block;
+  width: 70%;
+  height: 50px;
+  position: absolute;
+}
+
+.header .header-conts-top {
+  height: 50px;
+  width: 100%;
+  display: inline-flex;
+}
+
+.header .header-logo {
+  background: url(../img/ufo.png) no-repeat center/contain;
+  /*display: inline-block;*/
+  height: 50px;
+  width: 10%;
+  margin-top: 5px;
+}
+
+.header li {
+  list-style: none;
+  float: left;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 50px;
+}
+.header .header-seach-bar {
+  width: 90%;
+}
+.header .header-seach-bar input[type="text"] {
+  border: solid 3px lightblue;
+  width: 75%;
+  height: 25px;
+  margin: 15px 15px 20px;
+  position: relative;
+}
+
+.header .header-utils {
+  display: inline-block;
+  width: 20%;
+  height: 50px;
+  float: right;
+  margin-top: 30px;
+}
