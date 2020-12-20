@@ -22,6 +22,11 @@ public class EnrollController {
 		
 		return "enroll/agree";
 	}
+	@RequestMapping(value = "/enroll.do", method = RequestMethod.GET)
+	public String enroll() {
+		
+		return "enroll/enroll";
+	}
 	
 	
 }

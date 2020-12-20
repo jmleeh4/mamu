@@ -49,7 +49,7 @@
 </head>
 <body>
 
-<form action="<%= request.getContextPath() %>/member/nomalEnroll" id="joinForm" name="agreeFrm">
+<form action="${pageContext.request.contextPath}/enroll/enroll.do" id="joinForm" name="agreeFrm">
 			
 			<br>
 			<br>
