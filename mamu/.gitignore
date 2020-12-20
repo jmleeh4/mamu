@@ -170,3 +170,7 @@ $RECYCLE.BIN/
 .classpath
 .project
 
+# Intellij
+.idea/
+*.iml
+*.iws
