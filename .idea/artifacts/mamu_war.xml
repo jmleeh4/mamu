@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mamu:war">
+    <output-path>$PROJECT_DIR$/mamu/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>mamu</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="mamu-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="mamu:war exploded" />
+    </root>
+  </artifact>
+</component>

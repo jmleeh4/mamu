@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--  <link rel="shortcut icon" href="favicon-shopping-cart.ico" type="image/x-icon"/>-->
-  <link rel="stylesheet" href="../css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="../swiper/dist/css/swiper.min.css"/>
+  <script type="text/javascript" src="../swiper/dist/js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-ui.1.12.1.js"></script>
   <title>Mamu</title>
 </head>
 
@@ -34,13 +38,25 @@
         <li>회원가입</li>
       </div>
     </div>
-    <!-- //header area start -->
+    <!-- //header area end -->
 
     <!-- container area -->
     <div class="container">
-      <h1>title</h1>
-      <h2>title22</h2>
-      <h3>title33</h3>
+      <!-- slider main container -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <!--// slider main container -->
+
+
     </div>
     <!-- // container area  -->
 
@@ -51,4 +67,26 @@
     <!-- // footer area end -->
   </div>
 </body>
+<script>
+  $(document).ready(function() {
+    var mainSwiper = new Swiper('.swiper-container', {
+      direction: 'horizontal',
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+      },
+      autoplay: {
+        delay: 3000,
+      }
+    });
+
+  });
+
+
+</script>
 </html>
