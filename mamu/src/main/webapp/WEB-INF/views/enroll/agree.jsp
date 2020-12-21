@@ -49,7 +49,7 @@
 </head>
 <body>
 
-<form action="${pageContext.request.contextPath}/enroll/enroll.do" id="joinForm" name="agreeFrm">
+<form action="${pageContext.request.contextPath}/member/enroll.do" id="joinForm" name="agreeFrm">
 			
 			<br>
 			<br>
@@ -114,7 +114,7 @@ AD Story 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감
                 </li>
             </ul>
             <ul class="footBtwrap clearfix">
-            	<li><input class="fpmgBt1" type="button"  value="비동의" id="nonagree" onclick="location.href='<%= request.getContextPath() %>';"/></li>
+            	<li><input class="fpmgBt1" type="button"  value="비동의" id="nonagree" onclick="location.href='${pageContext.request.contextPath}';"/></li>
                 <li><input class="fpmgBt2" type="submit" value="동의" id="agree"/></li>
             </ul>
             <br/>
