@@ -1,4 +1,4 @@
-package com.kh.mamu.enroll.model.service;
+package com.kh.mamu.member.model.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.kh.mamu.enroll.model.dao.EnrollDAO;
+import com.kh.mamu.member.model.dao.MemberDAO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -15,10 +15,10 @@ import lombok.extern.slf4j.Slf4j;
 isolation = Isolation.READ_COMMITTED,
 rollbackFor = Exception.class)
 @Service
-public class EnrollServiceImpl implements EnrollService {
+public class MemberServiceImpl implements MemberService {
 	
 	@Autowired
-	private EnrollDAO enrollDAO;
+	private MemberDAO enrollDAO;
 	
 
 }
