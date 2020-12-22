@@ -9,8 +9,13 @@
 
 
 
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+<!-- 달력 -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-datepicker.css">
+<script src="${pageContext.request.contextPath}/resources/js/bootstrap-datepicker.js"></script>
 
 
 <div class="container">
@@ -29,20 +34,23 @@
 	<p class="divider-text">
         <span class="bg-light">OR</span>
     </p>
-	<form>
+	<form id = "enrollForm"
+		  action = "/member/memberEnroll.do"
+		  method = "POST">
 	<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-        <input id="user_id" name="user_id" class="form-control" placeholder="Create ID" type="text">
+        <input id="customer_id" name="customerId" class="form-control" placeholder="Create ID" type="text">
     </div> <!-- form-group// -->
-    <div class="check_font" id="id_check"></div>
+        <div class="check_font" id="id_check"></div>
+    
     
 	<div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input class="form-control" placeholder="Create password" type="password">
+        <input class="form-control" placeholder="Create password" type="password" name="custmerPw">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
@@ -54,48 +62,39 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-        <input name="" class="form-control" placeholder="Full name" type="text">
+        <input name="custmerName" class="form-control" placeholder="Full name" type="text">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
-        <input name="" class="form-control" placeholder="Email" type="email">
+        <input name="email" class="form-control" placeholder="Email" type="email" >
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 		</div>
-		<select class="custom-select" style="max-width: 120px;">
-		    <option selected="">+010</option>
-		    <option value="1">+011</option>
-		    <option value="2">+016</option>
-		    <option value="3">+017</option>
-		</select>
-    	<input name="" class="form-control" placeholder="Phone number" type="text">
-    </div> <!-- form-group// -->
-<!--<div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-		</div>
-		<select class="form-control">
-			<option selected=""> Select job type</option>
-			<option>Designer</option>
-			<option>Manager</option>
-			<option>Accaunting</option>
-		</select>
-	</div> form-group end.// -->
+    	<input name="phoneNum" class="form-control" placeholder="Phone number" type="text">
+    </div>
 	<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-        <input name="" class="form-control" placeholder="Address" type="text">
+        <input name="address" class="form-control" placeholder="Address" type="text">
     </div> <!-- form-group// -->
-                             
-    <div class="form-group">
+    <div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input type="text" id="datePicker" class="form-control" value="2019-06-27">
+    </div>
+
+
+
+	<div class="form-group">
         <button type="submit" id="enroll_submit" class="btn btn-primary btn-block"> Create Account  </button>
     </div> <!-- form-group// -->      
-    <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+    <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                              
 </form>
 </article>
 </div> <!-- card.// -->
@@ -108,26 +107,28 @@
 
 <script>
 
-	$("#user_id").blur(function() {
+	$("#customer_id").blur(function() {
 
-		var user_id = $("#user_id").val();
+		var customerId = $("#customer_id").val();
 
 		$.ajax({
-			url: "${pageContext.request.contextPath}/member/idCheck.do?userId=" + user_id,
-			type : "get",
+			url: "${pageContext.request.contextPath}/member/idCheck.do",
+			data : {
+				customerId : customerId 
+			},
+			method : "GET",
 			dataType : "json",
-			contentType: "application/json; charset=utf-8;",
-			success: function(date) {
-
-				if(data==1) {
+			success : function(data){
+				console.log(data);
+				if(data.isAvailable == false) {
 					$("#id_check").text("사용중인 아이디입니다.");
 					$("#id_check").css("color", "red");
 					$("#enroll_submit").attr("disabled",true);
 				}else{
-					if(/^\w{4,}$/.test(user_id) == true) {
+					if(/^\w{4,}$/.test(customerId) == true) {
 						$("#id_check").text("");
 						$("#enroll_submit").attr("disabled",false);
-					}else if(user_id == ""){
+					}else if(customer_id == ""){
 						
 						$('#id_check').text('아이디를 입력해주세요 :)');
 						$('#id_check').css('color', 'red');
@@ -150,8 +151,12 @@
 		
 	})
 	
-	
-		
+
+	$(function() {
+		$('#datePicker').datepicker({
+			format: "yyyy-mm-dd"
+		})
+	});
 
 </script>
 
