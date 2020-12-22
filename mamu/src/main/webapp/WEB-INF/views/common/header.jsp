@@ -28,6 +28,11 @@
   	<!-- 약관동의 css -->
 	<link rel="stylesheet"
 		  href="${pageContext.request.contextPath}/resources/css/enrollStyle.css"/>
+		  
+	<!-- 회원가입 css -->
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	
 
     
     
@@ -53,19 +58,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
+          <li class="nav-item">
+            <a class="nav-link" href="">로그인</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/enroll/agreement.do">회원가입</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/member/agreement.do">회원가입</a>
           </li>
         </ul>
       </div>
