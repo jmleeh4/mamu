@@ -14,7 +14,7 @@
   	
   	
   	<!-- jquery -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
     
     
   	
@@ -31,7 +31,15 @@
 		  
 	<!-- 회원가입 css -->
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	
+	
+	<!-- 날자선택 관련 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+	
+
+	
+
+
 	
 
     

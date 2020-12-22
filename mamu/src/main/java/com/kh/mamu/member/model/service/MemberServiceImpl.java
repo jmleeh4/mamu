@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kh.mamu.member.model.dao.MemberDAO;
+import com.kh.mamu.member.model.vo.Customer;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,7 +19,13 @@ rollbackFor = Exception.class)
 public class MemberServiceImpl implements MemberService {
 	
 	@Autowired
-	private MemberDAO enrollDAO;
-	
+	private MemberDAO memberDAO;
+
+	@Override
+	public Customer idCheck(String customerId) {
+		return memberDAO.idCheck(customerId);
+	}
+
+
 
 }

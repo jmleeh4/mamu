@@ -16,13 +16,13 @@ import lombok.ToString;
 public class Customer {
 
 	private String customerId;
-	private int customerLevel;
 	private String custmerPw;
 	private String custmerName;
-	private String address;
-	private String phoneNum;
 	private String email;
+	private String phoneNum;
+	private String address;
 	private Date birthday;
 	private Date rdate;
+	private int customerLevel;
 	
 }
