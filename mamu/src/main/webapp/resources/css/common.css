@@ -25,7 +25,7 @@ a {
   border: 2px solid lightblue;
   margin-bottom: 10px;
   height: 30px;
-  text-align: center;
+  text-align: left;
 }
 
 .sns-login {
@@ -54,4 +54,37 @@ a {
   height: 40px;
   margin-top: 10px;
   margin-left: 35%;
+}
+
+
+.join-area {
+  display: block;
+}
+.join-area h2 {
+  margin-top: 10px;
+  margin-left: 40%;
+  font-size: 15px;
+}
+.join-area input {
+  display: block;
+  border: 2px solid lightblue;
+  height: 30px;
+  text-align: left;
+  margin-top: 6px;
+  margin-left: 40%;
+  width: 20%;
+}
+
+.join-hr {
+  margin-left: 40%;
+  width: 20%;
+  color: lightgray;
+}
+
+.term-input input{
+  display: none;
+}
+
+.term-input label {
+  font-size: 10px;
 }
