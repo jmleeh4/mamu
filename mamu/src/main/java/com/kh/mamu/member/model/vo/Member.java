@@ -1,5 +1,6 @@
 package com.kh.mamu.member.model.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
@@ -13,16 +14,15 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Customer {
+public class Member implements Serializable{
 
-	private String customerId;
-	private String custmerPw;
-	private String custmerName;
+	private String memberId;
+	private String memberPw;
+	private String memberName;
 	private String email;
 	private String phoneNum;
 	private String address;
-	private Date birthday;
 	private Date rdate;
-	private int customerLevel;
+	private int memberLevel;
 	
 }

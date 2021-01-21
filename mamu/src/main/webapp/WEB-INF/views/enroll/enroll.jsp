@@ -35,13 +35,13 @@
         <span class="bg-light">OR</span>
     </p>
 	<form id = "enrollForm"
-		  action = "/member/memberEnroll.do"
+		  action = "${pageContext.request.contextPath}/member/memberEnroll.do"
 		  method = "POST">
 	<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-        <input id="customer_id" name="customerId" class="form-control" placeholder="Create ID" type="text">
+        <input id="member_id" name="memberId" class="form-control" placeholder="Create ID" type="text">
     </div> <!-- form-group// -->
         <div class="check_font" id="id_check"></div>
     
@@ -50,7 +50,7 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input class="form-control" placeholder="Create password" type="password" name="custmerPw">
+        <input class="form-control" placeholder="Create password" type="password" name="memberPw">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
@@ -62,7 +62,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-        <input name="custmerName" class="form-control" placeholder="Full name" type="text">
+        <input name="memberName" class="form-control" placeholder="Full name" type="text">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
@@ -82,12 +82,6 @@
 		 </div>
         <input name="address" class="form-control" placeholder="Address" type="text">
     </div> <!-- form-group// -->
-    <div class="form-group input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-		 </div>
-        <input type="text" id="datePicker" class="form-control" value="2019-06-27">
-    </div>
 
 
 
@@ -107,14 +101,14 @@
 
 <script>
 
-	$("#customer_id").blur(function() {
+	$("#member_id").blur(function() {
 
-		var customerId = $("#customer_id").val();
+		var memberId = $("#member_id").val();
 
 		$.ajax({
 			url: "${pageContext.request.contextPath}/member/idCheck.do",
 			data : {
-				customerId : customerId 
+				memberId : memberId 
 			},
 			method : "GET",
 			dataType : "json",
@@ -125,10 +119,11 @@
 					$("#id_check").css("color", "red");
 					$("#enroll_submit").attr("disabled",true);
 				}else{
-					if(/^\w{4,}$/.test(customerId) == true) {
-						$("#id_check").text("");
+					if(/^\w{4,}$/.test(memberId) == true) {
+						$("#id_check").text("사용 가능한 아이디입니다.");
+						$("#id_check").css("color", "blue");
 						$("#enroll_submit").attr("disabled",false);
-					}else if(customer_id == ""){
+					}else if(member_id == ""){
 						
 						$('#id_check').text('아이디를 입력해주세요 :)');
 						$('#id_check').css('color', 'red');

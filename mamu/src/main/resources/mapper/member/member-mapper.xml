@@ -4,17 +4,32 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="member">
 
-	<select id="idCheck" resultType="Customer">
+	<select id="idCheck" resultType="Member">
 
 		select
 			*
 		from 
-			customer 
+			member 
 		where 
-			customer_id = #{customerId}
+			member_id = #{memberId}
 	
 	</select>
 
-
+	<insert id="memberEnroll">
+		
+		insert into member values (
+			#{memberId},
+			#{memberLevel}, 
+			#{memberPw},
+			#{memberName},
+			#{address},
+			#{phoneNum},
+			#{email},
+			default
+		);
+			
+			
+	
+	</insert>
 
 </mapper>

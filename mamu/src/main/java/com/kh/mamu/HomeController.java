@@ -27,7 +27,7 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		
 		
-		return "redirect:/main/main.do";
+		return "forward:/main/main.do";
 	}
 	
 }
