@@ -1,10 +1,12 @@
 package com.kh.mamu.member.model.dao;
 
-import com.kh.mamu.member.model.vo.Customer;
+import com.kh.mamu.member.model.vo.Member;
 
 public interface MemberDAO {
 
-	Customer idCheck(String customerId);
+	Member idCheck(String memberId);
+
+	int memberEnroll(Member member);
 
 
 

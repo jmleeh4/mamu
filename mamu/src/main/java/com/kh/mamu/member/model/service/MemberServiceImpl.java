@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kh.mamu.member.model.dao.MemberDAO;
-import com.kh.mamu.member.model.vo.Customer;
+import com.kh.mamu.member.model.vo.Member;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,8 +22,13 @@ public class MemberServiceImpl implements MemberService {
 	private MemberDAO memberDAO;
 
 	@Override
-	public Customer idCheck(String customerId) {
-		return memberDAO.idCheck(customerId);
+	public Member idCheck(String memberId) {
+		return memberDAO.idCheck(memberId);
+	}
+
+	@Override
+	public int memberEnroll(Member member) {
+		return memberDAO.memberEnroll(member);
 	}
 
 

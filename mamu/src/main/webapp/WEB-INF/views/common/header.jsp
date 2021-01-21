@@ -42,8 +42,6 @@
 
 	
 
-    
-    
   	<!-- addFlashAttribute message -->
   	<c:if test="${ not empty msg }">
             <script>
